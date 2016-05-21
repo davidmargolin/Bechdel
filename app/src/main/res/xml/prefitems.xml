@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Bechdel Test">
+        <SwitchPreference android:title="Daily Movie Suggestions"
+            android:defaultValue="true"
+            android:summary="This option, if enabled, will enable movie suggestion notifications on a dialy basis"
+            android:key="suggestions" />
+        <Preference android:title="What is the Bechdel Test?"
+            android:key="bechdelwhat"/>
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="APIs Used">
+        <Preference android:title="OMDB"
+            android:key="omdbapi"
+            android:summary="www.omdbapi.com"/>
+        <Preference android:title="Bechdel Test"
+            android:key="bechdelapi"
+            android:summary="www.bechdeltest.com/api/v1/doc" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Developer">
+        <Preference android:title="David Margolin - Spring 2016"
+            android:enabled="false"/>
+    </PreferenceCategory>
+</PreferenceScreen>
