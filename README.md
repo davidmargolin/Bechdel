@@ -1,6 +1,7 @@
-<img src="http://i.imgbox.com/UbRTtq83.png"/>
+<img src="http://i.imgbox.com/BFBrpYwZ.png"/>
 
-#<img src="http://i.imgbox.com/aKlmOgbR.png"/>	Bechdel
+<img src="http://i.imgbox.com/WmAF1EHR.png"/>
+#	Bechdel
 
 Description: Check your favorite movie against a giant database of Bechdel rated films.
 
