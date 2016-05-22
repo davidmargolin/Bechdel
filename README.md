@@ -7,11 +7,13 @@ Description: Check your favorite movie against a giant database of Bechdel rated
 
 
 ## Download
-[APK Download](https://drive.google.com/file/d/0BwH2ptQ2m2LpT3V1TEI3U3hYWlU/view?usp=sharing)
+[APK Download](https://drive.google.com/file/d/0BwH2ptQ2m2LpcnVGbjJzN2V0OEU/view?usp=sharing)
 
 Coming Soon to the Google Play Store and Amazon AppStore
 
 ## Changelog
+#####V1.0.2
+- Notification Bug Fix
 #####V1.0.1
 - Quick crash fixes
 
