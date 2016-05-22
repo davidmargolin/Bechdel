@@ -75,7 +75,7 @@ public class NotificationReciever extends BroadcastReceiver {
             detailactivity.putExtra("id", p.getImdbID());
             detailactivity.putExtra("title", p.getTitle());
             detailactivity.putExtra("poster", p.getPoster());
-            detailactivity.putExtra("rating", p.getImdbID());
+            detailactivity.putExtra("rating", p.getImdbRating());
             detailactivity.putExtra("plot", p.getPlot());
             detailactivity.putExtra("year", p.getYear());
             detailactivity.putExtra("awards", p.getAwards());
