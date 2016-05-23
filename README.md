@@ -14,6 +14,7 @@ Coming Soon to the Google Play Store and Amazon AppStore
 ## Changelog
 #####V1.0.2
 - Notification Bug Fix
+
 #####V1.0.1
 - Quick crash fixes
 
