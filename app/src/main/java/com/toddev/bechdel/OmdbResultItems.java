@@ -30,7 +30,11 @@ public class OmdbResultItems {
     }
 
     public String getrelease_date() {
-        return release_date.substring(0,4);
+        try {
+            return release_date.substring(0,4);
+        }catch (Exception e){
+            return release_date;
+        }
     }
 
     public void setrelease_date(String Release_date) {
