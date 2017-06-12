@@ -61,22 +61,6 @@ public class MainActivity extends AppCompatActivity {
         String databasestring = prefs.getString("fulldatabase", null);
         if (databasestring == null) {
             new CreateDatabase().execute();
-            Intent intent1 = new Intent(this, NotificationReciever.class);
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(
-                    this, 0, intent1,
-                    PendingIntent.FLAG_UPDATE_CURRENT);
-            AlarmManager am = (AlarmManager) this
-                    .getSystemService(this.ALARM_SERVICE);
-            Calendar calendar = Calendar.getInstance();
-            calendar.set(Calendar.HOUR_OF_DAY, 20);
-            calendar.set(Calendar.MINUTE, 0);
-            calendar.set(Calendar.SECOND, 0);
-
-            am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                    AlarmManager.INTERVAL_DAY, pendingIntent);
-            PreferenceManager.getDefaultSharedPreferences(this).edit()
-                    .putBoolean("suggestions", true)
-                    .commit();
         } else {
             new RandomLister().execute();
         }
@@ -150,12 +134,12 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < 8; i++) {
                     Random rand = new Random();
                     int randomNumber = rand.nextInt(aarray.size());
-                    String jsonurl = "http://www.omdbapi.com/?i=tt" + aarray.get(randomNumber).getImdbid() + "&plot=full&r=json";
+                    String jsonurl = "https://api.themoviedb.org/3/movie/tt" + aarray.get(randomNumber).getImdbid() + "?api_key=184d66260cf77a7bbf0df25cd475d698";
                     Log.i("test", aarray.get(randomNumber).getImdbid());
                     InputStream input = new URL(jsonurl).openStream();
                     Reader reader = new InputStreamReader(input, "UTF-8");
                     OmdbResultItems p = new Gson().fromJson(reader, OmdbResultItems.class);
-                    p.setImdbID(aarray.get(randomNumber).getImdbid());
+                    p.setimdb_id(aarray.get(randomNumber).getImdbid());
                     plistrand.add(i, p);
                     aarray.remove(randomNumber);
                 }
@@ -237,11 +221,11 @@ public class MainActivity extends AppCompatActivity {
 
                 //omdb code
                 for (int i = 0; i < resultarray.size(); i++) {
-                    String jsonurl = "http://www.omdbapi.com/?i=tt" + resultarray.get(i).getImdbid() + "&plot=full&r=json";
+                    String jsonurl = "https://api.themoviedb.org/3/movie/tt" + resultarray.get(i).getImdbid() + "?api_key=184d66260cf77a7bbf0df25cd475d698";
                     input = new URL(jsonurl).openStream();
                     reader = new InputStreamReader(input, "UTF-8");
                     OmdbResultItems p = new Gson().fromJson(reader, OmdbResultItems.class);
-                    p.setImdbID(resultarray.get(i).getImdbid());
+                    p.setimdb_id(resultarray.get(i).getImdbid());
                     plistsearch.add(i, p);
                 }
 
@@ -255,8 +239,8 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             if (plistsearch.isEmpty()) {
                 OmdbResultItems p = new OmdbResultItems();
-                p.setPoster("404error");
-                p.setTitle("No Results Found");
+                p.setposter_path("404error");
+                p.settitle("No Results Found");
                 plistsearch.add(p);
             }
             progressBar.setVisibility(View.INVISIBLE);

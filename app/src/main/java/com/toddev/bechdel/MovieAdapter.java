@@ -55,25 +55,25 @@ public class MovieAdapter extends BaseAdapter {
         rowView = inflater.inflate(R.layout.movielist_item, null);
         holder.titletextview = (TextView) rowView.findViewById(R.id.title);
         holder.coverimageview = (ImageView) rowView.findViewById(R.id.cover);
-        holder.titletextview.setText(items.get(position).getTitle() + " (" + items.get(position).getYear() + ")");
+        holder.titletextview.setText(items.get(position).gettitle() + " (" + items.get(position).getrelease_date() + ")");
         //jsoup parsing
 
 
         //load image
-        Picasso.with(context).load(items.get(position).getPoster()).placeholder(R.drawable.placeholder).into(holder.coverimageview);
+        Picasso.with(context).load("https://image.tmdb.org/t/p/w500" + items.get(position).getposter_path()).placeholder(R.drawable.placeholder).into(holder.coverimageview);
 
-        if (!(items.get(0).getPoster() == "404error")) {
+        if (!(items.get(0).getposter_path() == "404error")) {
             rowView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent detailactivity = new Intent(context, IndiActivity.class);
-                    detailactivity.putExtra("id", items.get(position).getImdbID());
-                    detailactivity.putExtra("title", items.get(position).getTitle());
-                    detailactivity.putExtra("poster", items.get(position).getPoster());
-                    detailactivity.putExtra("rating", items.get(position).getImdbRating());
-                    detailactivity.putExtra("plot", items.get(position).getPlot());
-                    detailactivity.putExtra("year", items.get(position).getYear());
-                    detailactivity.putExtra("awards", items.get(position).getAwards());
+                    detailactivity.putExtra("id", items.get(position).getimdb_id());
+                    detailactivity.putExtra("title", items.get(position).gettitle());
+                    detailactivity.putExtra("poster", items.get(position).getposter_path());
+                    detailactivity.putExtra("rating", items.get(position).getvote_average());
+                    detailactivity.putExtra("plot", items.get(position).getoverview());
+                    detailactivity.putExtra("year", items.get(position).getrelease_date());
+                    detailactivity.putExtra("awards", items.get(position).getrevenue());
                     context.startActivity(detailactivity);
                 }
             });

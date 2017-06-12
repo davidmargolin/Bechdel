@@ -54,7 +54,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             omdbapipref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 public boolean onPreferenceClick(Preference preference) {
                     Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(Uri.parse("http://www.omdbapi.com"));
+                    i.setData(Uri.parse("https://www.themoviedb.org"));
                     startActivity(i);
                     return true;
                 }
@@ -73,39 +73,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                     i.setData(Uri.parse("https://vimeo.com/85232647"));
                     getActivity().startActivity(i);
                     return true;
-                }
-            });
-            notifications.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    boolean isenabled = (Boolean) newValue;
-                    SharedPreferences.Editor e = mPrefs.edit();
-                    e.putBoolean("suggestions", isenabled);
-                    e.commit();
-
-                    Intent intent1 = new Intent(getActivity(), NotificationReciever.class);
-                    PendingIntent pendingIntent = PendingIntent.getBroadcast(
-                            getActivity(), 0, intent1,
-                            PendingIntent.FLAG_UPDATE_CURRENT);
-                    AlarmManager am = (AlarmManager) getActivity()
-                            .getSystemService(getActivity().ALARM_SERVICE);
-                    if (isenabled) {
-                        notifications.setChecked(true);
-                        Calendar calendar = Calendar.getInstance();
-                        calendar.set(Calendar.HOUR_OF_DAY, 20);
-                        calendar.set(Calendar.MINUTE, 0);
-                        calendar.set(Calendar.SECOND, 0);
-
-                        am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                                AlarmManager.INTERVAL_DAY, pendingIntent);
-
-                        //enable notifications
-                    } else {
-                        notifications.setChecked(false);
-                        am.cancel(pendingIntent);
-                        //disable notifications
-                    }
-                    return false;
                 }
             });
         }

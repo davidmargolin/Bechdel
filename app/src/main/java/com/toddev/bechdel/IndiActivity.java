@@ -62,10 +62,10 @@ public class IndiActivity extends AppCompatActivity {
         titleview.setText(title + " (" + year + ")");
         ratingview.setText("Rating: " + rating + "/10");
         plotview.setText(plot);
-        awardsview.setText(awards);
+        awardsview.setText("$" + awards);
 
         //  yearview.setText();
-        Picasso.with(this).load(poster.replace("300", "500")).placeholder(R.drawable.placeholder).fit().into(posterview);
+        Picasso.with(this).load("https://image.tmdb.org/t/p/w500"+poster).placeholder(R.drawable.placeholder).fit().into(posterview);
         Log.i("id", id);
         new OGRetriever().execute();
 

@@ -176,7 +176,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:padding="4dp"
-                            android:text="Awards"
+                            android:text="Budget"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                         <TextView

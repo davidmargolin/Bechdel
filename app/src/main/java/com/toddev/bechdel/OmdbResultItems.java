@@ -5,68 +5,67 @@ package com.toddev.bechdel;
  * Items from the OMDB database
  */
 public class OmdbResultItems {
-    private String Poster;
-    private String Title;
-    private String Year;
-    private String Plot;
-    private String Awards;
-    private String imdbRating;
-    private String imdbID;
+    private String poster_path;
+    private String title;
+    private String release_date;
+    private String overview;
+    private String revenue;
+    private String vote_average;
+    private String imdb_id;
 
-    public String getImdbID() {
-        return imdbID;
+    public String getimdb_id() {
+        return imdb_id;
     }
 
-    public void setImdbID(String imdbID) {
-        this.imdbID = imdbID;
+    public void setimdb_id(String imdb_id) {
+        this.imdb_id = imdb_id;
     }
 
-    public String getImdbRating() {
-        return imdbRating;
+    public String getvote_average() {
+        return vote_average;
     }
 
-    public void setImdbRating(String imdbRating) {
-        this.imdbRating = imdbRating;
+    public void setvote_average(String vote_average) {
+        this.vote_average = vote_average;
     }
 
-    public String getYear() {
-        return Year;
+    public String getrelease_date() {
+        return release_date.substring(0,4);
     }
 
-    public void setYear(String year) {
-        Year = year;
+    public void setrelease_date(String Release_date) {
+        release_date = Release_date;
     }
 
-    public String getPlot() {
-        return Plot;
+    public String getoverview() {
+        return overview;
     }
 
-    public void setPlot(String plot) {
-        Plot = plot;
+    public void setoverview(String Overview) {overview = Overview;
     }
 
-    public String getAwards() {
-        return Awards;
+    public String getrevenue() {
+        return revenue;
     }
 
-    public void setAwards(String awards) {
-        Awards = awards;
+    public void setrevenue(String Revenue) {
+        revenue = Revenue;
     }
 
-    public String getPoster() {
-        return Poster;
+    public String getposter_path() {
+        return poster_path;
     }
 
-    public void setPoster(String poster) {
-        Poster = poster;
+    public void setposter_path(String poster) {
+        poster_path = poster;
     }
 
-    public String getTitle() {
-        return Title;
+    public String gettitle() {
+        return title;
     }
 
-    public void setTitle(String title) {
-        Title = title;
+    public void settitle(String Title) {
+        title = Title;
     }
 
 
