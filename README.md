@@ -1,20 +1,13 @@
 <img src="http://i.imgbox.com/BFBrpYwZ.png"/>
 
-<img src="http://i.imgbox.com/WmAF1EHR.png"/>
-#	Bechdel
+<h1><img src="http://i.imgbox.com/WmAF1EHR.png" width="80px"/>  Bechdel</h1>
 
-Description: Check your favorite movie against a giant database of Bechdel rated films.
+Check your favorite movie against a giant database of Bechdel rated films.
 
 
 ## Download
-[APK Download](https://drive.google.com/file/d/0BwH2ptQ2m2LpcnVGbjJzN2V0OEU/view?usp=sharing)
+See Releases
 
-## Changelog
-#####V1.0.2
-- Notification Bug Fix
-
-#####V1.0.1
-- Quick crash fixes
 
 ## Acknowledgements
 
