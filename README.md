@@ -1,12 +1,20 @@
-<img src="http://i.imgbox.com/BFBrpYwZ.png"/>
 
 <h1><img src="http://i.imgbox.com/WmAF1EHR.png" width="80px"/>  Bechdel</h1>
+
+<br>
+
+<img src="http://i.imgbox.com/BFBrpYwZ.png" width="600px"/>
+
+<br>
+
+<img src="/a.png" width="200px"/>  <img src="/b.png" width="200px"/>  <img src="/c.png" width="200px"/> <img src="/d.png" width="200px"/>
 
 Check your favorite movie against a giant database of Bechdel rated films.
 
 
 ## Download
-See Releases
+
+[See Releases](https://github.com/trickedoutdavid/Bechdel/releases)
 
 
 ## Acknowledgements
@@ -17,7 +25,7 @@ See Releases
 
 ## APIs Used
 
-* [OMDB](http://www.omdbapi.com/) (movie data and posters)
+* [TMDB](https://www.themoviedb.org/documentation/api) (movie data and posters)
 
 * [BechdelTest](http://bechdeltest.com/api/v1/doc) (movie list and bechdel test results)
 
