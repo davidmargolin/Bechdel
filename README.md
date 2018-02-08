@@ -1,5 +1,5 @@
 
-<h1><img src="http://i.imgbox.com/WmAF1EHR.png" width="80px"/>  Bechdel</h1>
+<h1><img src="/app/src/main/res/drawable-hdpi/ic_launcher.png" width="80px"/>  Bechdel</h1>
 
 <br>
 
