@@ -1,7 +1,5 @@
 package com.toddev.bechdel;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -25,11 +23,11 @@ import java.io.Reader;
 import java.lang.reflect.Type;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
 
-import jp.co.recruit_mp.android.widget.HeaderFooterGridView;
+import jp.co.recruit_mp.android.headerfootergridview.HeaderFooterGridView;
+
 /**
  * Created by David Margolin on 5/8/2016.
  * A View Controller for the main activity
@@ -85,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onSearchAction() {
+            public void onSearchAction(String currentQuery) {
                 header.setText("");
                 search.setSearchText(query);
                 searcher.cancel(true);
