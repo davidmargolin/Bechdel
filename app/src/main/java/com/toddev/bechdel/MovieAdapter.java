@@ -20,9 +20,9 @@ import java.util.ArrayList;
 public class MovieAdapter extends BaseAdapter {
     private static LayoutInflater inflater = null;
     Context context;
-    ArrayList<OmdbResultItems> items = new ArrayList<OmdbResultItems>();
+    ArrayList<TmdbResultItems> items = new ArrayList<TmdbResultItems>();
 
-    public MovieAdapter(MainActivity mainActivity, ArrayList<OmdbResultItems> p) {
+    public MovieAdapter(MainActivity mainActivity, ArrayList<TmdbResultItems> p) {
         items = p;
         context = mainActivity;
         inflater = (LayoutInflater) context.

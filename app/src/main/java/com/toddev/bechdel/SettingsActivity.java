@@ -47,14 +47,14 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.prefitems);
             mPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
-            Preference omdbapipref = (Preference) findPreference("omdbapi");
+            Preference tmdbapipref = (Preference) findPreference("tmdbapi");
             Preference bechdeltestpref = (Preference) findPreference("bechdelapi");
             Preference bechdelwhatis = (Preference) findPreference("bechdelwhat");
             final SwitchPreference notifications = (SwitchPreference) findPreference("suggestions");
-            omdbapipref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            tmdbapipref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 public boolean onPreferenceClick(Preference preference) {
                     Intent i = new Intent(Intent.ACTION_VIEW);
-                    i.setData(Uri.parse("https://www.themoviedb.org"));
+                    i.setData(Uri.parse("https://www.themoviedb.org/documentation/api"));
                     startActivity(i);
                     return true;
                 }

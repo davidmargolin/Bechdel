@@ -6,9 +6,9 @@
 
     </PreferenceCategory>
     <PreferenceCategory android:title="APIs Used">
-        <Preference android:title="OMDB"
-            android:key="omdbapi"
-            android:summary="www.omdbapi.com"/>
+        <Preference android:title="TMDB"
+            android:key="tmdbapi"
+            android:summary="https://www.themoviedb.org/documentation/api"/>
         <Preference android:title="Bechdel Test"
             android:key="bechdelapi"
             android:summary="www.bechdeltest.com/api/v1/doc" />

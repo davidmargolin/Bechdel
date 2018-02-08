@@ -4,7 +4,7 @@ package com.toddev.bechdel;
  * Created by David Margolin on 5/9/2016.
  * Items from the OMDB database
  */
-public class OmdbResultItems {
+public class TmdbResultItems {
     private String poster_path;
     private String title;
     private String release_date;

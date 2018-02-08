@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
     TextView header;
     ProgressBar progressBar;
     SharedPreferences prefs;
-    ArrayList<OmdbResultItems> plistrand = new ArrayList<OmdbResultItems>();
-    ArrayList<OmdbResultItems> plistsearch = new ArrayList<OmdbResultItems>();
+    ArrayList<TmdbResultItems> plistrand = new ArrayList<TmdbResultItems>();
+    ArrayList<TmdbResultItems> plistsearch = new ArrayList<TmdbResultItems>();
     Searcher searcher = new Searcher();
 
     @Override
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 search.setSearchText(query);
                 searcher.cancel(true);
                 searcher = new Searcher();
-                plistsearch = new ArrayList<OmdbResultItems>();
+                plistsearch = new ArrayList<TmdbResultItems>();
                 lv.setAdapter(new MovieAdapter(MainActivity.this, plistsearch));
                 searcher.execute();
             }
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.i("test", aarray.get(randomNumber).getImdbid());
                     InputStream input = new URL(jsonurl).openStream();
                     Reader reader = new InputStreamReader(input, "UTF-8");
-                    OmdbResultItems p = new Gson().fromJson(reader, OmdbResultItems.class);
+                    TmdbResultItems p = new Gson().fromJson(reader, TmdbResultItems.class);
                     p.setimdb_id(aarray.get(randomNumber).getImdbid());
                     plistrand.add(i, p);
                     aarray.remove(randomNumber);
@@ -217,12 +217,12 @@ public class MainActivity extends AppCompatActivity {
                 List<ResultItems> resultarray = new Gson().fromJson(reader, new TypeToken<List<ResultItems>>() {
                 }.getType());
 
-                //omdb code
+                //tmdb code
                 for (int i = 0; i < resultarray.size(); i++) {
                     String jsonurl = "https://api.themoviedb.org/3/movie/tt" + resultarray.get(i).getImdbid() + "?api_key=184d66260cf77a7bbf0df25cd475d698";
                     input = new URL(jsonurl).openStream();
                     reader = new InputStreamReader(input, "UTF-8");
-                    OmdbResultItems p = new Gson().fromJson(reader, OmdbResultItems.class);
+                    TmdbResultItems p = new Gson().fromJson(reader, TmdbResultItems.class);
                     p.setimdb_id(resultarray.get(i).getImdbid());
                     plistsearch.add(i, p);
                 }
@@ -236,7 +236,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             if (plistsearch.isEmpty()) {
-                OmdbResultItems p = new OmdbResultItems();
+                TmdbResultItems p = new TmdbResultItems();
                 p.setposter_path("404error");
                 p.settitle("No Results Found");
                 plistsearch.add(p);
